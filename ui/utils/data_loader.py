@@ -1,16 +1,44 @@
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import streamlit as st
 
-DEMO_MODE = True
+from model.anomaly_detection import detect_anomalies
+from utils.preprocessing import preprocess_data
+from utils.risk_engine import build_risk_table
+
+DEMO_MODE = False
 STATES = ["Assam", "Meghalaya", "Tripura", "Mizoram", "Manipur", "Nagaland", "Arunachal Pradesh"]
-DISEASES = ["Acute Diarrhoeal Disease", "Cholera", "Typhoid", "Leptospirosis"]
+DISEASES = ["Acute Diarrhoeal Disease", "Cholera"]
+REGION = "northeast_india"
 
 
 @st.cache_data
-def load_demo_data():
+def load_backend_dataset():
+    raw_path = Path(__file__).resolve().parents[2] / "data" / "raw" / "Final_data.csv"
+    processed_path = Path(__file__).resolve().parents[2] / "data" / "processed" / "northeast_india_processed.csv"
+
+    if processed_path.exists():
+        return pd.read_csv(processed_path)
+
+    if raw_path.exists():
+        return preprocess_data(pd.read_csv(raw_path), region=REGION, save_to_csv=True)
+
+    raise FileNotFoundError("No processed or raw HealthSeers dataset was found.")
+
+
+@st.cache_data
+def load_data():
+    if DEMO_MODE:
+        return _demo_data()
+
+    processed = load_backend_dataset()
+    return _normalize_backend_data(processed)
+
+
+def _demo_data():
+    import numpy as np
+
     rng = np.random.default_rng(42)
     districts = [
         ("Assam", "Dibrugarh", 27.47, 94.91), ("Assam", "Kamrup", 26.14, 91.74),
@@ -30,7 +58,7 @@ def load_demo_data():
             records.append({
                 "state_ut": state, "district": district, "latitude": latitude, "longitude": longitude,
                 "disease": disease, "date": pd.Timestamp("2026-08-15"), "current_cases": current_cases,
-                "predicted_cases": predicted_cases, "historical_baseline": max(1, int(np.mean(history))),
+                "predicted_cases": predicted_cases, "historical_baseline": max(1, int(sum(history) / len(history))),
                 "trend_percentage": trend, "risk_level": risk_level,
                 "precipitation": 68 if risk_level == "HIGH" else 42 if risk_level == "MEDIUM" else 24,
                 "temperature": round(27 + rng.uniform(-1.5, 3.5), 1), "lai": round(2.4 + rng.uniform(-0.5, 0.7), 2),
@@ -39,37 +67,47 @@ def load_demo_data():
     return pd.DataFrame(records)
 
 
-@st.cache_data
-def load_data():
-    csv_path = Path(__file__).resolve().parents[2] / "data" / "raw" / "Final_data.csv"
-    if not DEMO_MODE and csv_path.exists():
-        try:
-            raw = pd.read_csv(csv_path)
-            return _normalize_real_data(raw)
-        except (OSError, ValueError, KeyError):
-            pass
-    return load_demo_data()
+def _normalize_backend_data(processed):
+    if processed.empty:
+        return processed.copy()
 
+    risk_table = build_risk_table(processed, limit=None, region=REGION)
+    risk_map = risk_table.set_index("location_id")["risk_level"].to_dict()
 
-def _normalize_real_data(raw):
-    required = {"state_ut", "district", "Latitude", "Longitude", "Disease", "Cases"}
-    if not required.issubset(raw.columns):
-        raise KeyError("Final_data.csv does not contain the expected fields")
-    grouped = raw.sort_values("year").groupby(["state_ut", "district", "Disease"], as_index=False)
-    latest = grouped.tail(1).copy()
-    latest["latitude"] = latest["Latitude"]
-    latest["longitude"] = latest["Longitude"]
-    latest["disease"] = latest["Disease"]
-    latest["current_cases"] = latest["Cases"].fillna(0).astype(int)
-    latest["predicted_cases"] = latest["current_cases"]
-    latest["historical_baseline"] = latest["current_cases"]
-    latest["trend_percentage"] = 0
-    latest["risk_level"] = "LOW"
-    latest["precipitation"] = latest.get("preci", 0)
-    latest["temperature"] = latest.get("Temp", 0)
-    latest["lai"] = latest.get("LAI", 0)
-    latest["history"] = latest["current_cases"].apply(lambda value: [int(value)] * 8)
-    return latest
+    records = []
+    for location_id, group in processed.groupby("location_id", sort=False):
+        group = group.sort_values(["year", "week"]).reset_index(drop=True)
+        latest = group.iloc[-1]
+        history = group["Cases"].tail(8).astype(float).tolist()
+        recent_average = float(group["Cases"].tail(4).mean()) if not group.empty else 0.0
+        historical_average = float(group["Cases"].iloc[:-1].mean()) if len(group) > 1 else float(latest["Cases"])
+        trend_pct = 0.0 if historical_average == 0 else ((recent_average - historical_average) / historical_average) * 100
+
+        risk_level = risk_map.get(location_id, "LOW")
+        records.append({
+            "state_ut": latest["state_ut"],
+            "district": latest["district"],
+            "latitude": latest.get("Latitude", 0.0),
+            "longitude": latest.get("Longitude", 0.0),
+            "disease": latest["Disease"],
+            "date": pd.Timestamp(year=int(latest["year"]), month=1, day=1),
+            "current_cases": int(float(latest["Cases"])),
+            "predicted_cases": int(float(latest["Cases"])),
+            "historical_baseline": int(round(historical_average)),
+            "trend_percentage": round(float(trend_pct), 2),
+            "risk_level": risk_level,
+            "precipitation": float(latest.get("preci", 0.0)),
+            "temperature": float(latest.get("Temp", 0.0)),
+            "lai": float(latest.get("LAI", 0.0)),
+            "history": history,
+        })
+
+    result = pd.DataFrame(records)
+    if result.empty:
+        return result
+
+    result = result.sort_values(["risk_level", "current_cases"], ascending=[False, False])
+    return result.reset_index(drop=True)
 
 
 def get_risk_summary(df):
