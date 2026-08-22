@@ -1,0 +1,9 @@
+location_id,state_ut,district,disease,latest_cases,recent_avg_cases,historical_avg_cases,baseline_ratio,z_score,risk_level,score,anomaly_flag,reasons
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,35.0,22.5,20.583333333333332,1.7004048582995952,1.1901071876402451,HIGH,6,True,Predicted cases are above the historical baseline; The forecast indicates a significant increase in cases; Recent cases are increasing above the historical baseline; Recent precipitation is high for this location; LAI is below the local environmental baseline
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,21.0,25.75,37.904761904761905,0.5540201005025126,0.578439862392817,MEDIUM,3,False,Within expected range
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,14.0,27.25,32.15384615384615,0.4354066985645933,1.1105667158707437,MEDIUM,3,False,Within expected range
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,21.0,17.75,74.11111111111111,0.2833583208395802,0.3827553619404001,MEDIUM,3,False,Within expected range
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,42.0,72.25,65.36363636363636,0.6425591098748262,0.2958078519831567,LOW,2,False,Within expected range
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,45.0,32.25,92.11111111111111,0.48854041013268995,0.5741895387562862,LOW,2,False,Within expected range
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,18.0,28.75,38.8,0.4639175257731959,0.5380842119432474,LOW,2,False,Within expected range
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,19.0,32.75,41.6,0.4567307692307692,0.46679471452313165,LOW,0,False,Within expected range

@@ -160,7 +160,11 @@ def assess_risk(
 	}
 
 
-def build_risk_table(data: pd.DataFrame, limit: Optional[int] = 20) -> pd.DataFrame:
+def build_risk_table(
+	data: pd.DataFrame,
+	limit: Optional[int] = 20,
+	region: Optional[str] = None,
+) -> pd.DataFrame:
 	"""Build a risk table from the processed HealthSeers dataset.
 
 	Until the LSTM is integrated, the latest observed case count is used as a
@@ -206,6 +210,20 @@ def build_risk_table(data: pd.DataFrame, limit: Optional[int] = 20) -> pd.DataFr
 	result = pd.DataFrame(rows).sort_values(
 		by=["score", "latest_cases"], ascending=False
 	)
+	if region is not None:
+		region_key = str(region).strip().lower().replace("-", "_")
+		if region_key in {"northeast_india", "northeast india", "north_east_india", "north_east india"}:
+			allowed = {
+				"Arunachal Pradesh",
+				"Assam",
+				"Manipur",
+				"Meghalaya",
+				"Mizoram",
+				"Nagaland",
+				"Sikkim",
+				"Tripura",
+			}
+			result = result[result["state_ut"].isin(allowed)].copy()
 	return result.head(limit) if limit is not None else result
 
 
