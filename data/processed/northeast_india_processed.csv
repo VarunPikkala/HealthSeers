@@ -1,0 +1,114 @@
+location_id,state_ut,district,Disease,year,week,Cases,preci,LAI,Temp,Latitude,Longitude
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2010,28,30,3.4182755775,5.0,286.4483333,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2011,10,101,0.5065819908,21.0,280.552,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2011,11,121,0.5065819908,21.0,280.552,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2011,21,225,0.5065819908,21.0,280.552,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2011,22,239,0.5065819908,21.0,280.552,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2013,5,29,0.1920768368,24.0,284.4833334,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2013,7,40,0.1920768368,24.0,284.4833334,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2015,46,27,1.178883881,39.0,289.1766666,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2018,6,17,0.7054884658,6.0,283.676,27.3,93.05
+Arunachal Pradesh_East Kameng_Acute Diarrhoeal Disease,Arunachal Pradesh,East Kameng,Acute Diarrhoeal Disease,2019,34,45,1.301433854,49.0,291.0933334,27.3,93.05
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2010,23,4,1.901711645,2.0,289.49,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2010,35,12,0.485282387,21.0,300.14,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2010,49,166,0.01781948214,19.0,301.19,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2011,23,4,1.323451787,11.0,300.05,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2012,21,86,0.8280119688,15.0,299.212,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2012,26,23,1.913111273,11.0,283.66,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2012,39,67,2.309937183,2.0,298.584,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2013,16,33,1.191392867,6.0,293.445,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2014,23,68,0.2138732549,11.0,303.0333334,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2014,24,68,0.2138732549,11.0,303.0333334,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2014,46,42,0.00108423338,21.0,302.3666666,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2015,45,28,0.06220711313,20.0,299.8933334,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2016,7,10,0.03025554285,21.0,292.9166666,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2017,9,21,0.0124046834,21.0,298.1166666,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2017,13,8,0.5398165781,21.0,292.68,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2017,52,30,0.000170675394,12.0,296.016,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2019,19,9,0.889684084,21.0,294.38,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2019,25,70,0.5659578779,12.0,302.32,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2020,6,6,0.01485558021,10.0,292.3933334,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2020,20,21,0.6472085684,17.0,304.0933334,27.4844597,94.9019447
+Assam_Dibrugarh_Acute Diarrhoeal Disease,Assam,Dibrugarh,Acute Diarrhoeal Disease,2022,23,18,0.8621149921,21.0,294.68,27.4844597,94.9019447
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2010,50,7,0.07376313349,11.0,298.632,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2011,17,6,0.1487792432,21.0,300.095,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2012,22,50,0.24015846676666666,17.666666666666668,300.27833333333336,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2012,24,14,0.2796949168,17.0,299.68,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2012,52,15,0.02919107386,30.0,292.8566666,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2014,4,18,0.007962702131,29.0,293.468,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2014,17,21,0.02797657407,12.0,303.38,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2014,18,21,0.1104332111,21.0,306.415,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2014,24,40,0.4735485209,21.0,302.68,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2014,45,22,0.01729844128,15.0,300.18333340000004,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2015,3,18,0.1530587097,30.0,291.54,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2016,25,15,0.7800636426,13.0,303.3666666,26.7577925,94.2079645
+Assam_Jorhat_Acute Diarrhoeal Disease,Assam,Jorhat,Acute Diarrhoeal Disease,2019,11,35,0.2238638954,10.0,294.36400000000003,26.7577925,94.2079645
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2009,27,5,0.777605627,3.0,302.14,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2009,42,31,0.9433891119,20.0,299.3066666,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2010,34,70,0.4933375414,8.0,302.44,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2010,41,21,2.363425784,21.0,300.6,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2012,50,27,0.0002072430532,20.0,297.4866666,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2014,23,84,0.1729915908,13.0,303.5266666,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2014,28,104,1.111815146,21.0,301.37,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2014,30,104,1.111815146,21.0,301.37,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2014,51,20,0.004539112976,21.0,295.176,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2015,7,13,0.002519467917,7.0,296.7266666,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2015,51,31,0.002191030846,30.0,298.536,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2016,24,13,0.409327615,21.0,302.625,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2016,36,53,0.7377362407,21.0,300.785,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2016,38,22,1.458021363,21.0,294.72,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2017,35,16,0.6309130433,15.0,301.42,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2017,37,25,1.015994235,21.0,300.98,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2017,42,34,0.5247491289,23.0,301.5466666,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2018,15,41,0.06844909719,21.0,301.516,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2018,18,11,0.8174189771,11.0,300.7933334,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2019,1,58,0.01192469865,18.0,292.976,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2019,23,13,0.3783044545,21.0,304.5466666,26.12755515,91.29987148
+Assam_Kamrup_Acute Diarrhoeal Disease,Assam,Kamrup,Acute Diarrhoeal Disease,2020,44,21,1.372511654,31.0,302.5066666,26.12755515,91.29987148
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2009,1,463,0.0425777914,20.0,291.5233334,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2010,49,18,0.1259869458,21.0,297.02,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2011,39,8,0.8620547574,21.0,297.82,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2013,36,16,1.025550635,14.0,301.66,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2013,37,39,0.7863223079,30.0,300.6,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2016,17,73,0.75946933375,20.0,299.212,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2017,37,13,0.9472657615,24.0,301.93,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2017,43,17,1.256796128,32.0,300.22,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2019,17,20,0.07967517011,27.0,302.056,26.30414915,92.71605974
+Assam_Nagaon_Acute Diarrhoeal Disease,Assam,Nagaon,Acute Diarrhoeal Disease,2020,44,21,2.127016304,28.0,299.94,26.30414915,92.71605974
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2010,41,180,1.527125002,21.0,299.48,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2010,50,17,0.3082220842,15.0,296.06,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2011,18,15,0.8901877922,17.0,303.68,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2011,20,32,0.5992525517,17.0,301.07,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2011,24,3,1.410996264,12.0,300.705,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2011,37,17,0.8672224147,21.0,301.05,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2012,21,40,0.1099748259,21.0,303.035,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2012,38,59,1.432131992,2.0,298.584,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2016,38,30,0.6505195303,19.0,300.4866666,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2018,24,23,1.766388015,8.0,305.36,26.96388985,94.58213345
+Assam_Sibsagar_Acute Diarrhoeal Disease,Assam,Sibsagar,Acute Diarrhoeal Disease,2018,39,19,0.5640186702,23.0,301.38,26.96388985,94.58213345
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2009,47,65,0.004613573965,31.0,299.90000000000003,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2010,13,23,1.544552059,21.0,298.38,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2010,39,232,0.924282346,21.0,299.42,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2010,41,20,0.7473641348,24.0,300.3466666,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2011,15,13,0.35847868,17.0,298.94333340000003,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2011,18,56,2.06658738,18.0,300.8066666,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2011,29,47,2.508183342,7.0,299.18,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2012,43,16,0.01967961675,28.0,300.6733334,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2013,16,10,1.053657897,5.0,298.88,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2013,39,225,0.1921449881,26.0,303.4766666,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2015,5,12,0.001136885664,28.0,295.68333340000004,26.76777075,92.70140886
+Assam_Sonitpur_Acute Diarrhoeal Disease,Assam,Sonitpur,Acute Diarrhoeal Disease,2015,13,42,0.01183512621,15.0,303.876,26.76777075,92.70140886
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2012,7,30,0.0456279034,21.0,292.2066666,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2012,21,57,0.2949388284,27.0,302.31,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2013,20,27,0.5672654388,21.0,295.7666666,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2013,22,13,0.7265435833,21.0,298.40000000000003,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2014,5,14,0.00108755249,27.0,294.632,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2015,40,55,2.523038283,36.0,289.94,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2015,41,14,0.1778561426,39.0,301.18333340000004,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2016,19,35,0.3287352801,20.0,301.38,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2017,52,28,0.0001450949599,8.0,295.2366666,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2018,22,50,1.001659276,14.0,293.72,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2019,17,52,0.03253068923,27.0,299.30400000000003,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2019,48,9,0.01176659525,32.0,295.51,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2021,35,34,2.04125962,22.0,300.42,26.77253155,92.10641749
+Assam_Udalguri_Acute Diarrhoeal Disease,Assam,Udalguri,Acute Diarrhoeal Disease,2022,20,14,2.407587488,21.0,300.92,26.77253155,92.10641749

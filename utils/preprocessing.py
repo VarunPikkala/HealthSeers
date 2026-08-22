@@ -2,12 +2,29 @@
 # HEALTHSEERS - DATA PREPROCESSING
 # ==========================================
 
+from pathlib import Path
+
 import pandas as pd
+
+
+NORTHEAST_INDIA_STATES = {
+    "Arunachal Pradesh",
+    "Assam",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Sikkim",
+    "Tripura",
+}
 
 
 def preprocess_data(
     df,
-    min_observations=10
+    min_observations=10,
+    region="northeast_india",
+    save_to_csv=True,
+    output_path=None
 ):
     """
     Preprocess HealthSeers raw disease data.
@@ -20,6 +37,17 @@ def preprocess_data(
     min_observations : int, default=10
         Minimum number of observations required
         for a district-disease group.
+
+    region : str, default="northeast_india"
+        Region filter applied before training. Supported values include
+        northeast_india, north_east_india, india, and all.
+
+    save_to_csv : bool, default=True
+        Whether to save the final processed DataFrame to CSV.
+
+    output_path : str or Path, optional
+        Custom CSV destination. If not provided and save_to_csv is True,
+        the file is written to data/processed/<region>_processed.csv.
 
     Returns
     -------
@@ -82,7 +110,28 @@ def preprocess_data(
 
 
     # ==========================================
-    # 4. FILTER TARGET DISEASES
+    # 4. FILTER BY REGION (DEFAULT: NORTHEAST INDIA)
+    # ==========================================
+
+    region_key = str(region).strip().lower().replace("-", "_")
+    region_map = {
+        "northeast_india": NORTHEAST_INDIA_STATES,
+        "northeast india": NORTHEAST_INDIA_STATES,
+        "north_east_india": NORTHEAST_INDIA_STATES,
+        "north_east india": NORTHEAST_INDIA_STATES,
+        "india": None,
+        "all": None,
+    }
+
+    region_states = region_map.get(region_key)
+    if region_states is not None:
+        df = df[
+            df["state_ut"].isin(region_states)
+        ].copy()
+        print(f"\nFiltered to Northeast India states: {sorted(region_states)}")
+
+    # ==========================================
+    # 5. FILTER TARGET DISEASES
     # ==========================================
 
     target_diseases = [
@@ -99,7 +148,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 5. CLEAN CASES COLUMN
+    # 6. CLEAN CASES COLUMN
     # ==========================================
 
     df["Cases"] = pd.to_numeric(
@@ -112,7 +161,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 6. EXTRACT NUMERIC WEEK
+    # 7. EXTRACT NUMERIC WEEK
     # ==========================================
 
     df["week"] = (
@@ -128,7 +177,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 7. REMOVE INVALID ROWS
+    # 8. REMOVE INVALID ROWS
     # ==========================================
 
     before_rows = len(df)
@@ -151,7 +200,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 8. HANDLE MISSING ENVIRONMENTAL VALUES
+    # 9. HANDLE MISSING ENVIRONMENTAL VALUES
     # ==========================================
 
     environmental_features = [
@@ -170,7 +219,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 9. DEFINE UNIQUE OBSERVATION
+    # 10. DEFINE UNIQUE OBSERVATION
     # ==========================================
 
     group_columns = [
@@ -183,7 +232,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 10. AGGREGATE DUPLICATES
+    # 11. AGGREGATE DUPLICATES
     # ==========================================
 
     df = (
@@ -206,7 +255,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 11. SORT CHRONOLOGICALLY
+    # 12. SORT CHRONOLOGICALLY
     # ==========================================
 
     df = df.sort_values(
@@ -221,7 +270,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 12. COUNT OBSERVATIONS PER LOCATION
+    # 13. COUNT OBSERVATIONS PER LOCATION
     # ==========================================
 
     group_counts = (
@@ -241,7 +290,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 13. KEEP VALID LSTM GROUPS
+    # 14. KEEP VALID LSTM GROUPS
     # ==========================================
 
     valid_groups = group_counts[
@@ -251,7 +300,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 14. FILTER VALID GROUPS
+    # 15. FILTER VALID GROUPS
     # ==========================================
 
     df = df.merge(
@@ -272,7 +321,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 15. CREATE LOCATION ID
+    # 16. CREATE LOCATION ID
     # ==========================================
 
     df["location_id"] = (
@@ -285,7 +334,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 16. SELECT FINAL COLUMNS
+    # 17. SELECT FINAL COLUMNS
     # ==========================================
 
     final_columns = [
@@ -309,7 +358,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 17. FINAL SORT
+    # 18. FINAL SORT
     # ==========================================
 
     processed_df = processed_df.sort_values(
@@ -322,7 +371,7 @@ def preprocess_data(
 
 
     # ==========================================
-    # 18. FINAL SUMMARY
+    # 19. FINAL SUMMARY
     # ==========================================
 
     print("\n" + "=" * 60)
@@ -343,5 +392,18 @@ def preprocess_data(
     print(
         processed_df.isnull().sum()
     )
+
+    if save_to_csv:
+        if output_path is None:
+            base_dir = Path(__file__).resolve().parent.parent / "data" / "processed"
+            base_dir.mkdir(parents=True, exist_ok=True)
+            region_name = str(region).strip().lower().replace(" ", "_").replace("-", "_")
+            output_path = base_dir / f"{region_name}_processed.csv"
+        else:
+            output_path = Path(output_path)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        processed_df.to_csv(output_path, index=False)
+        print(f"\nSaved processed data to: {output_path}")
 
     return processed_df
