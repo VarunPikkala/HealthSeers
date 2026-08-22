@@ -6,9 +6,9 @@ from utils.theme import get_theme
 
 def _layout(fig, height=280):
     theme = get_theme()
-    fig.update_layout(height=height, margin=dict(l=8, r=8, t=24, b=8), paper_bgcolor=theme["glass"], plot_bgcolor=theme["background_secondary"], font=dict(color=theme["text_secondary"], size=11), legend=dict(orientation="h", y=1.12, x=0), hovermode="x unified")
-    fig.update_xaxes(showgrid=False, linecolor=theme["border"])
-    fig.update_yaxes(showgrid=True, gridcolor=theme["chart_grid"], zeroline=False)
+    fig.update_layout(height=height, margin=dict(l=8, r=8, t=24, b=8), paper_bgcolor=theme["glass"], plot_bgcolor=theme["background_secondary"], font=dict(color=theme["structure"], size=11), legend=dict(orientation="h", y=1.12, x=0), hovermode="x unified")
+    fig.update_xaxes(showgrid=False, linecolor=theme["border"], tickfont=dict(color=theme["structure"]))
+    fig.update_yaxes(showgrid=True, gridcolor=theme["chart_grid"], zeroline=False, tickfont=dict(color=theme["structure"]))
     return fig
 
 

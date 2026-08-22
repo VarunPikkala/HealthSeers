@@ -1,12 +1,12 @@
 import streamlit as st
 
 LIGHT_THEME = {
-    "background": "#F4F1E8", "background_secondary": "#FAF8F2", "background_dark": "#EAE5D8",
-    "glass": "rgba(255,255,255,0.42)", "glass_featured": "rgba(255,255,255,0.55)", "glass_active": "rgba(255,255,255,0.62)",
-    "accent": "#00AFC1", "accent_hover": "#008B9A", "accent_soft": "rgba(0,175,193,0.08)", "accent_border": "rgba(0,175,193,0.28)", "accent_glow": "rgba(0,175,193,0.12)",
-    "text_primary": "#17252B", "text_secondary": "#52636A", "text_muted": "#819096", "structure": "#102B35", "border": "#D9E1DE", "divider": "#E4E7E1",
-    "ai": "#7957D5", "ai_soft": "rgba(121,87,213,0.07)", "data": "#3277C8", "data_soft": "rgba(50,119,200,0.07)",
-    "low": "#16A66A", "medium": "#D99A00", "high": "#E23B45", "low_rgb": [22, 166, 106, 210], "medium_rgb": [217, 154, 0, 210], "high_rgb": [226, 59, 69, 210], "sidebar": "rgba(255,255,255,0.45)", "chart_grid": "#E4E7E1", "map_style": None,
+    "background": "#F7F7F2", "background_secondary": "#FFFFFF", "background_dark": "#EFEFE8",
+    "glass": "#FFFFFF", "glass_featured": "#FFFFFF", "glass_active": "#FFFFFF",
+    "accent": "#00AFC1", "accent_hover": "#008B9A", "accent_soft": "#EAF9FA", "accent_border": "rgba(0,175,193,0.28)", "accent_glow": "rgba(0,175,193,0.12)",
+    "text_primary": "#10252B", "text_secondary": "#52636A", "text_muted": "#7B8A8F", "structure": "#10252B", "border": "#DDE4E3", "divider": "#E4E7E1",
+    "ai": "#7957D5", "ai_soft": "#F3F0FF", "data": "#3277C8", "data_soft": "#EDF4FC",
+    "low": "#16A66A", "medium": "#D99A00", "high": "#E23B45", "low_rgb": [22, 166, 106, 210], "medium_rgb": [217, 154, 0, 210], "high_rgb": [226, 59, 69, 210], "sidebar": "#FFFFFF", "chart_grid": "#E6ECEC", "map_style": "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
 }
 
 DARK_THEME = {
@@ -32,4 +32,23 @@ def initialize_theme():
 
 def theme_css(theme):
     variables = ";".join(f"--{key.replace('_', '-')}: {value}" for key, value in theme.items() if key not in {"map_style"})
-    return f"<style>:root{{{variables};--theme-transition:background-color 200ms ease,color 200ms ease,border-color 200ms ease,box-shadow 200ms ease;}}</style>"
+    common_overrides = """
+    .stApp,[data-testid='stAppViewContainer'],[data-testid='stMain'],.main,[data-testid='stSidebar']{color:var(--text-primary)!important;}
+    .stApp p,.stApp label,.stApp h1,.stApp h2,.stApp h3,.stApp h4,.stApp h5,.stApp h6,.stApp [data-testid='stMetricLabel'],.stApp [data-testid='stMetricValue']{color:var(--text-primary)!important;}
+    """ if theme is LIGHT_THEME else ""
+    light_overrides = """
+    html,body,#root,.stApp,[class*='stApp'],[data-testid='stAppViewContainer'],[data-testid='stMain'],.main,.main .block-container{background-color:var(--background)!important;background:var(--background)!important;color:var(--text-primary)!important;}
+    [data-testid='stHeader']{background:var(--background)!important;}
+    .main p,.main label,.main h1,.main h2,.main h3,.main h4,.main h5,.main h6,.main [data-testid='stMetricLabel'],.main [data-testid='stMetricValue']{color:var(--text-primary)!important;}
+    .top-header,.kpi-card,.panel,.architecture,.method-step,footer{background:#FFFFFF;backdrop-filter:none;-webkit-backdrop-filter:none;}
+    [data-testid='stSidebar']{background:#FFFFFF!important;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:2px 0 12px rgba(16,37,43,.04);}
+    .stButton button{background:#FFFFFF!important;}
+    .stButton button:hover,.stButton button[kind='primary']{background:#EAF9FA!important;}
+    [data-testid='stSelectbox']>div>div,[data-testid='stMultiSelect']>div>div,[data-testid='stTextInput'] input{background:#FFFFFF!important;backdrop-filter:none;color:#10252B!important;}
+    [data-testid='stSelectbox'] *,[data-testid='stMultiSelect'] *,[data-baseweb='select'] *{color:#10252B!important;}
+    [data-baseweb='popover'],[data-baseweb='menu'],[role='listbox']{background:#FFFFFF!important;color:#10252B!important;}
+    [data-baseweb='popover'] *,[data-baseweb='menu'] *,[role='listbox'] *{color:#10252B!important;}
+    .alert-panel{background:#FFF1F2;}
+    .architecture-flow span{background:#EAF9FA;}
+    """ if theme is LIGHT_THEME else ""
+    return f"<style>:root{{{variables};--theme-transition:background-color 200ms ease,color 200ms ease,border-color 200ms ease,box-shadow 200ms ease;}}{common_overrides}{light_overrides}</style>"
