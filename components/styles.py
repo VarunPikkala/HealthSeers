@@ -40,6 +40,10 @@ def load_styles(theme_name="dark"):
             transition: background 0.45s ease;
         }}
 
+        .stSidebar {{
+            color: var(--text);
+        }}
+
         .stSidebar .stButton > button {{
             border-radius: 12px;
             border: 1px solid transparent;
@@ -61,6 +65,10 @@ def load_styles(theme_name="dark"):
             background: linear-gradient(90deg, var(--button-grad-1), var(--button-grad-2));
             color: #ffffff;
             box-shadow: 0 10px 22px rgba(14, 165, 233, 0.18);
+        }}
+
+        .stSidebar label, .stSidebar p, .stSidebar div, .stSidebar span {{
+            color: var(--text);
         }}
 
         .block-container {{
@@ -208,6 +216,20 @@ def load_styles(theme_name="dark"):
 
         .stSidebar .stCheckbox [data-testid="stMarkdownContainer"] {{
             color: var(--text);
+        }}
+
+        .stSelectbox, .stSelectbox > div, .stSelectbox label, .stSelectbox [data-testid="stBaseWidgetLabel"] {{
+            color: var(--text) !important;
+        }}
+
+        .stSelectbox > div > div {{
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: var(--text);
+        }}
+
+        .stTextInput > div, .stTextInput input, .stTextInput label {{
+            color: var(--text) !important;
         }}
 
         @keyframes themePulse {{

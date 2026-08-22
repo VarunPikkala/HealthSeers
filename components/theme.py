@@ -82,60 +82,51 @@ def render_theme_toggle():
         unsafe_allow_html=True,
     )
 
+    label = "☀️ Light" if is_light else "🌙 Dark"
+
+    if st.sidebar.button(
+        f"{label}",
+        key="theme_toggle_switch",
+        use_container_width=True,
+        help="Toggle between dark and light mode",
+    ):
+        set_theme("light" if not is_light else "dark")
+
     st.sidebar.markdown(
-        f"""
+        """
         <style>
-        div[data-testid="stCheckbox"] {{
-            margin-top: 0.2rem;
-        }}
-        div[data-testid="stCheckbox"] label {{
+        div[data-testid="stSidebar"] .stButton > button {
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 0.7rem;
-            font-weight: 700;
-            color: {'#12304a' if is_light else '#F8FAFC'};
-        }}
-        div[data-testid="stCheckbox"] .stCheckbox {{
-            width: 52px;
-            height: 28px;
+            justify-content: center;
+            min-height: 44px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
             border-radius: 999px;
-            background: linear-gradient(90deg, #0ea5e9, #14b8a6);
-            position: relative;
-            padding: 4px;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
-        }}
-        div[data-testid="stCheckbox"] .stCheckbox input {{
-            display: none;
-        }}
-        div[data-testid="stCheckbox"] .stCheckbox span {{
-            display: block;
-            width: 20px;
-            height: 20px;
+            background: linear-gradient(90deg, #0f172a, #1e293b);
+            color: #f8fafc;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+            transition: all 0.25s ease;
+        }
+        div[data-testid="stSidebar"] .stButton > button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(14, 165, 233, 0.18);
+        }
+        div[data-testid="stSidebar"] .stButton > button::before {
+            content: "";
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: white;
             position: absolute;
-            left: 4px;
-            top: 4px;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.25);
-        }}
-        div[data-testid="stCheckbox"] .stCheckbox input:checked + span {{
-            left: 28px;
-        }}
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 1px 8px rgba(15, 23, 42, 0.28);
+        }
         </style>
         """,
         unsafe_allow_html=True,
     )
-
-    theme_on = st.sidebar.checkbox(
-        "☀️ Light mode",
-        value=is_light,
-        key="theme_toggle_switch",
-        help="Toggle between dark and light mode",
-    )
-
-    if theme_on:
-        set_theme("light")
-    else:
-        set_theme("dark")
