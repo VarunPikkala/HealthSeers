@@ -1,0 +1,9 @@
+{
+  "git.ignoreLimitWarning": true,
+  "chat.tools.terminal.autoApprove": {
+    "/^python -c \"from utils\\.risk_engine import assess_risk; high=assess_risk\\(27, \\[17,18,20\\], \\[4,5,4,5,4\\], precipitation=180, historical_precipitation=100, temperature=31, historical_temperature=28, lai=0\\.5, historical_lai=1\\.0\\); low=assess_risk\\(5, \\[4,5,4\\], \\[4,5,4,5\\], precipitation=100, historical_precipitation=100, temperature=28, historical_temperature=28, lai=1\\.0, historical_lai=1\\.0\\); assert high\\['risk_level'\\] == 'HIGH', high; assert low\\['risk_level'\\] == 'LOW', low; assert high\\['reasons'\\] and high\\['recommended_actions'\\]; print\\(high\\); print\\(low\\)\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}
